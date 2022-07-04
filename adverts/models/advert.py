@@ -1,10 +1,13 @@
 from django.core.validators import FileExtensionValidator
 from django.db import models
 
+from adverts.models.categories import Category
+
 
 class Advert(models.Model):
     name = models.CharField("назва", max_length=200, null=False)
     author = models.CharField("автор", max_length=100, null=True, blank=True)
+    category = models.IntegerField(verbose_name='категорія', choices=Category.choices, default=Category.OTHER)
     date_published = models.DateTimeField("дата публікації", auto_now_add=True)
     seller = models.ForeignKey(to='accounts.Profile',
                                on_delete=models.CASCADE,
