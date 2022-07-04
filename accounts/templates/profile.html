@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Редагувати профіль</title>
+{% endblock %}
+
+{% block body %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p><button style="margin-top: 7px"  type="submit" class="btn btn-primary btn-sm">
+            Підтвердити</button></p>
+    </form>
+{% endblock %}

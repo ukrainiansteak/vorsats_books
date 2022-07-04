@@ -40,9 +40,11 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'django_extensions',
+    'crispy_forms',
 
     'accounts',
     'adverts',
+
 
 ]
 
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'vorsatz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['core_vorsatz/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
