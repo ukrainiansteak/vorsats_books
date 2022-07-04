@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+flake8 = "*"
+django-extensions = "*"
+django-debug-toolbar = "*"
+pillow = "*"
 
 [dev-packages]
 

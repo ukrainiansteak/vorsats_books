@@ -1,2 +1,6 @@
 .idea
 *.pyc
+__pycache__
+static-root
+media
+*.db
