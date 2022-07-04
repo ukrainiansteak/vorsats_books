@@ -6,8 +6,16 @@ class Advert(models.Model):
     name = models.CharField("назва", max_length=200, null=False)
     author = models.CharField("автор", max_length=100, null=True, blank=True)
     date_published = models.DateTimeField("дата публікації", auto_now_add=True)
-    user = models.ForeignKey(to='accounts.Profile', on_delete=models.CASCADE,
-                             related_name='adverts', verbose_name="користувач")
+    seller = models.ForeignKey(to='accounts.Profile',
+                               on_delete=models.CASCADE,
+                               null=False, blank=False,
+                               related_name='seller_adverts',
+                               verbose_name="продавець")
+    buyer = models.ForeignKey(to='accounts.Profile',
+                              on_delete=models.SET_NULL,
+                              related_name='buyer_adverts',
+                              verbose_name="покупець",
+                              null=True, blank=True)
     description = models.TextField("опис", max_length=1000)
     image = models.ImageField(
         "фото",

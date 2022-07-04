@@ -52,6 +52,7 @@ class Profile(AbstractUser):
                            message="Phone should be in format +381112223344")
         ])
     image = models.ImageField(
+        "зображення профілю",
         null=True,
         upload_to='pics/',
         blank=True,
