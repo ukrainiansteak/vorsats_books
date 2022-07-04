@@ -56,7 +56,7 @@ class Profile(AbstractUser):
         upload_to='pics/',
         blank=True,
         validators=[
-            FileExtensionValidator(['jpg', 'png'])
+            FileExtensionValidator(['jpg', 'png', 'jpeg'])
         ]
     )
 
