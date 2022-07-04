@@ -61,3 +61,7 @@ class Profile(AbstractUser):
     )
 
     objects = UserManager()
+
+    class Meta:
+        verbose_name = 'користувач'
+        verbose_name_plural = 'користувачі'
