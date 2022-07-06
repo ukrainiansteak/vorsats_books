@@ -11,7 +11,8 @@ class AccountRegisterForm(UserCreationForm):
 
 class UserEditForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
-        fields = ("first_name", "last_name", "email")
+        model = get_user_model()
+        fields = ("first_name", "last_name", "email", "image")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

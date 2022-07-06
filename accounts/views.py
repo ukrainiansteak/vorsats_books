@@ -58,14 +58,14 @@ class AccountEdit(UpdateView):
         if user_form.is_valid():
             user_form.save()
             messages.success(request, 'Профіль успішно змінено.')
-            return redirect(reverse('accounts:profile'))
+            return redirect(reverse('accounts:edit_profile'))
 
         return render(request, 'profile.html', context={'form': user_form})
 
 
 class ChangePasswordView(LoginRequiredMixin, PasswordChangeView):
     template_name = 'change_password.html'
-    success_url = reverse_lazy('accounts:profile')
+    success_url = reverse_lazy('accounts:edit_profile')
 
     def form_valid(self, form):
         result = super().form_valid(form)

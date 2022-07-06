@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">Форзац</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+      </ul>
+        <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+            <li class="nav-item me-4">
+                <a class="btn btn-secondary my-2 my-sm-0" href="{% url 'adverts:create_advert' %}">Додати оголошення</a>
+            </li>
+          {% if user.is_authenticated %}
+              <li class="nav-item me-3">
+                  {% if user.image %}
+                      <img src="{{ user.image.url }}" style="height: 40px; width: 40px; object-fit: cover; object-position: center;" class="rounded-circle">
+                  {% endif %}
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link" href="{% url 'accounts:edit_profile' %}">Профіль</a>
+              </li>
+          {% else %}
+              <li class="nav-item me-3">
+                <a class="nav-link" href="{% url 'accounts:login' %}">Увійти</a>
+              </li>
+          {% endif %}
+        </ul>
+    </div>
+  </div>
+</nav>

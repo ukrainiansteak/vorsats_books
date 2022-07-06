@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}
+    <title>Оголошення</title>
+{% endblock %}
+
+{% block body %}
+    <form>
+        {{ filter.form|crispy }}
+        <button style="margin-top: 7px" type="submit" class="btn btn-primary btn-sm">Пошук</button>
+    </form>
+
+    {% for advert in advert_list %}
+        <br>
+
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+                {% if advert.image %}
+                    <img src="{{ advert.image }}" class="img-fluid rounded-start" alt="{{ advert.name }}">
+                {% else %}
+                    <img class="img-fluid rounded-start" alt="{{ advert.name }}" src="{% static 'images/placeholder.jpeg' %}">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">{{ advert.name}}</h5>
+                  <h6 class="card-text">{{ advert.get_category_display}} {{ advert.author}} </h6>
+                <p class="card-text">{{ advert.description }}</p>
+                <p class="card-text"><small class="text-muted">{{ advert.date_published}}</small></p>
+                  <p>{{ advert.price }}</p>
+                  <a href="#" class="btn btn-primary">Купити</a>
+              </div>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}
