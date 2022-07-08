@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
+{% load bootstrap_pagination %}
 {% load static %}
 {% block title %}
     <title>Оголошення</title>
@@ -18,21 +19,23 @@
           <div class="row g-0">
             <div class="col-md-4">
                 {% if advert.image %}
-                    <img src="{{ advert.image }}" class="img-fluid rounded-start" alt="{{ advert.name }}">
+                    <img src="{{ advert.image.url }}" class="img-fluid rounded-start" style="max-height: 300px; max-width: 300px" alt="{{ advert.name }}">
                 {% else %}
                     <img class="img-fluid rounded-start" alt="{{ advert.name }}" src="{% static 'images/placeholder.jpeg' %}">
                 {% endif %}
+                <p class="card-text"><small class="text-muted">{{ advert.date_published}}</small></p>
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                  <h5 class="card-title">{{ advert.name}}</h5>
+                  <h5 class="card-title"><a href="{% url 'adverts:advert' id=advert.id %}">{{ advert.name}}</a></h5>
                   <h6 class="card-text">{{ advert.get_category_display}} {{ advert.author}} </h6>
                 <p class="card-text">{{ advert.description }}</p>
-                <p class="card-text"><small class="text-muted">{{ advert.date_published}}</small></p>
                   <p>{{ advert.price }}</p>
                   <a href="#" class="btn btn-primary">Купити</a>
               </div>
+            </div>
           </div>
         </div>
     {% endfor %}
+    {% bootstrap_paginate page_obj show_prev_next="false" show_first_last="true" %}
 {% endblock %}

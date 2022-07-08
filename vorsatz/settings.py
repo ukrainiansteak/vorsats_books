@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap_pagination',
     'debug_toolbar',
     'django_extensions',
     'crispy_forms',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
 
     'accounts',
     'adverts',
-    'core_vorsatz',
 
 
 ]
@@ -67,7 +67,7 @@ ROOT_URLCONF = 'vorsatz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['core_vorsatz/templates', 'core_vorsatz/templates/widgets'],
+        'DIRS': ['core_vorsatz/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

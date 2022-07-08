@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 
 from adverts.forms import AdvertCreateForm, AdvertFilter
 from adverts.models import Advert
@@ -28,6 +28,12 @@ class AdvertsView(ListView):
         context = super().get_context_data(**kwargs)
         context['filter'] = self.get_filter()
         return context
+
+
+class SingleAdvertView(DetailView):
+    model = Advert
+    pk_url_kwarg = 'id'
+    template_name = 'advert.html'
 
 
 class CreateAdvertView(CreateView):

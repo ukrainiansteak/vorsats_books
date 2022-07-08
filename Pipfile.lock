@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c3f58655b313868d7d44bfc3666ec1ea0f153aa590e7f3375d30f074b235447d"
+            "sha256": "0822175a75d1b3de495659daca0288e66eb55cb563cd1ff0a5f58fb7b921af27"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,19 @@
         },
         "django": {
             "hashes": [
-                "sha256:a67a793ff6827fd373555537dca0da293a63a316fe34cb7f367f898ccca3c3ae",
-                "sha256:ca54ebedfcbc60d191391efbf02ba68fb52165b8bf6ccd6fe71f098cac1fe59e"
+                "sha256:51284300f1522ffcdb07ccbdf676a307c6678659e1284f0618e5a774127a6a08",
+                "sha256:e22c9266da3eec7827737cde57694d7db801fedac938d252bf27377cec06ed1b"
             ],
             "index": "pypi",
-            "version": "==4.0.6"
+            "version": "==3.2.9"
+        },
+        "django-bootstrap-pagination": {
+            "hashes": [
+                "sha256:47e742679cf109e12f10ae09d5263433f94440818cf7b023e90a3f5252849639",
+                "sha256:69d826d92217325611cb86e49944d8261e3c92eaa4deafea5a605d79fd363883"
+            ],
+            "index": "pypi",
+            "version": "==1.7.1"
         },
         "django-crispy-forms": {
             "hashes": [
@@ -158,6 +166,13 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.4.0"
+        },
+        "pytz": {
+            "hashes": [
+                "sha256:1e760e2fe6a8163bc0b3d9a19c4f84342afa0a2affebfaa84b01b978a02ecaa7",
+                "sha256:e68985985296d9a66a881eb3193b0906246245294a881e7c8afe623866ac6a5c"
+            ],
+            "version": "==2022.1"
         },
         "sqlparse": {
             "hashes": [
